@@ -1,6 +1,10 @@
 import { defineConfig, presetUno, presetIcons, type PresetMiniTheme } from 'unocss'
+import transformerDirectives from '@unocss/transformer-directives'
 
 export default defineConfig({
+  transformers: [
+    transformerDirectives() as any,
+  ],
   rules: [
     [/^fs-(\d*\.?\d+(px|rem|em))$/, ([_, value]) => ({ 'font-size': value })],
     [/^square-(\d*\.?\d+(px|rem|em))$/, ([_, value]) => ({ height: value, width: value })],

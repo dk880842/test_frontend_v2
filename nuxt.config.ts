@@ -2,7 +2,7 @@
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   modules: ['@nuxtjs/i18n', '@pinia/nuxt', '@nuxt/image', '@unocss/nuxt', '@nuxtjs/google-fonts'],
 
@@ -84,11 +84,18 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern',
+          // api: 'modern',
         },
       },
     },
   },
 
-  css: ['~/assets/css/style.scss'],
+  css: ['@unocss/reset/tailwind.css', '~/assets/css/style.scss'],
+  typescript: {
+    // 開發時啟動獨立 process 跑型別檢查
+    typeCheck: true,
+
+    // 建議開啟嚴格模式，這樣 vue-tsc 的效果最好
+    strict: true
+  }
 })

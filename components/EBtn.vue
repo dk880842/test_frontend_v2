@@ -1,30 +1,38 @@
 <template>
-  <button>
-    <slot />
+  <button
+    class="e-btn"
+    :class="[`e-btn-${props.color}`]"
+  >
+    <span v-if="text">{{ text }}</span>
+    <slot v-else />
   </button>
 </template>
 
 <script setup lang="ts">
 interface Props {
-  text?: string // 若有輸入時以此為主，若沒有就顯示 slot
-  color?: 'success' | 'error' | 'warn' // 預設為 success
+  text?: string
+  color?: 'success' | 'error' | 'warn'
 }
 
-const props = withDefaults(defineProps<Props>(), {})
+const props = withDefaults(defineProps<Props>(), {
+  color: 'success'
+})
 </script>
 
 <style scoped lang="scss">
 .e-btn {
-  // success 綠
+  @apply inline-flex items-center justify-center px-6 py-1.5 rounded text-base font-medium text-white cursor-pointer border-none outline-none transition-all duration-200 select-none active:scale-95;
+
   &-success {
+    @apply bg-green-700 hover:bg-green-800 active:bg-green-900 hover:shadow-[0_0_8px_rgba(21,128,61,0.5)];
   }
 
-  // error 紅
   &-error {
+    @apply bg-red-700 hover:bg-red-800 active:bg-red-900 hover:shadow-[0_0_8px_rgba(185,28,28,0.5)];
   }
 
-  // warn 黃
   &-warn {
+    @apply bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-800 hover:shadow-[0_0_8px_rgba(202,138,4,0.5)];
   }
 }
 </style>

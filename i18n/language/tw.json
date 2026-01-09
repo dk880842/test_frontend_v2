@@ -1,4 +1,43 @@
 {
-  "welcome": "歡迎",
-  "test": "測試"
+  "operation_title": "操作",
+  "input": {
+    "label": {
+      "name": "名字",
+      "age": "年齡"
+    },
+    "placeholder": {
+      "name": "請輸入名字",
+      "age": "請輸入年齡"
+    }
+  },
+  "table": {
+    "header": {
+      "name": "名字",
+      "age": "年齡",
+      "action": "操作"
+    }
+  },
+  "btn": {
+    "btn_update": "修改",
+    "btn_add": "新增",
+    "btn_edit": "修改",
+    "btn_delete": "刪除",
+    "confirm": "確認",
+    "cancel": "取消"
+  },
+  "validation": {
+    "name_required": "名字不能為空",
+    "age_required": "請輸入年齡",
+    "age_min": "年齡必須大於 0"
+  },
+  "message": {
+    "select_item_first": "請先選擇下方列表中的項目進行修改",
+    "action_failed": "操作失敗"
+  },
+  "dialog": {
+    "title": "確認操作",
+    "confirm_add": "確定要新增 {name} 嗎？",
+    "confirm_update": "確定要修改資料為 {name} 嗎？",
+    "confirm_delete": "確定要刪除這筆資料嗎？此操作無法復原。"
+  }
 }
